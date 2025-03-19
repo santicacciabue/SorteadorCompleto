@@ -1,0 +1,53 @@
+/* Estilo para la tarjeta */
+.card {
+  width: 65%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Estilo para el encabezado de la tarjeta */
+.card-header {
+  background-color: white;
+  color: #FFA500;
+  font-size: 20px;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Estilo para el número total */
+.card-title {
+  font-size: 60px;
+  font-weight: bold;
+  text-align: left;
+  color: #000000;
+}
+
+/* Estilo para el texto debajo del número */
+.card-text {
+  font-size: 25px;
+  color: #6c757d;
+  text-align: left;
+}
+
+/* Estilo para el enlace que contiene la flecha */
+.arrow-link {
+  color: #000000;
+  font-size: 25px;
+  text-decoration: none;
+  margin-left: 10px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Flecha al pasar el mouse */
+.arrow-link:hover {
+  color: #FFA500;
+}

@@ -1,0 +1,38 @@
+.widget {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid #dcdcdc;
+}
+
+.widget h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0d3556;
+}
+
+.widget ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.widget li {
+  margin-bottom: 10px;
+}
+
+.widget .btn {
+  background-color: #ddd;
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.widget .btn:hover {
+  background-color: #9ba1a8;
+}
+

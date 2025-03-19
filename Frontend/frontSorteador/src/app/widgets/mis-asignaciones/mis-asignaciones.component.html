@@ -1,0 +1,12 @@
+<div class="widget">
+  <h2>Mis Asignaciones</h2>
+  <ul>
+    <li *ngFor="let asignacion of asignaciones" [ngClass]="{'confirmado': asignacion.estado === 'Confirmado', 'pendiente': asignacion.estado === 'Pendiente', 'reemplazo': asignacion.estado === 'Reemplazo solicitado'}">
+      <p><strong>Sorteo:</strong> {{ asignacion.sorteo }}</p>
+      <p><strong>Fecha:</strong> {{ asignacion.fecha }}</p>
+      <p><strong>Hora:</strong> {{ asignacion.hora }}</p>
+      <p><strong>Estado:</strong> </p>
+      <button class="btn" (click)="verDetalles(asignacion)">Ver Detalles</button>
+    </li>
+  </ul>
+</div>

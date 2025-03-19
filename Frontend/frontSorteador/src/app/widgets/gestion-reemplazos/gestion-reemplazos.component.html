@@ -1,0 +1,74 @@
+<div class="widget">
+  <h2>Gestión de Reemplazos</h2>
+
+  <!-- Formulario para agregar una nueva solicitud -->
+  <div class="form-group">
+    <h3>Solicitar Reemplazo</h3>
+    <label for="motivo">Motivo:</label>
+    <input [(ngModel)]="nuevaSolicitud.motivo" id="motivo" class="form-control" placeholder="Ej. Enfermedad, Vacaciones">
+
+    <label for="fecha">Fecha:</label>
+    <input [(ngModel)]="nuevaSolicitud.fecha" type="date" id="fecha" class="form-control">
+
+    <label for="reemplazoPropuesto">Reemplazo Propuesto:</label>
+    <input [(ngModel)]="nuevaSolicitud.reemplazoPropuesto" id="reemplazoPropuesto" class="form-control" placeholder="Nombre del reemplazo">
+
+    <button (click)="agregarSolicitud()" class="btn btn-primary mt-2">Agregar Solicitud</button>
+  </div>
+
+  <!-- Lista de solicitudes de reemplazo -->
+  <h3 class="mt-4">Solicitudes de Reemplazo</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Motivo</th>
+        <th>Fecha</th>
+        <th>Estado</th>
+        <th>Reemplazo Propuesto</th>
+        <th>Estado del Reemplazo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudes">
+        <td>{{ solicitud.id }}</td>
+        <td>{{ solicitud.motivo }}</td>
+        <td>{{ solicitud.fecha }}</td>
+        <td>{{ solicitud.estado }}</td>
+        <td>{{ solicitud.reemplazoPropuesto || 'N/A' }}</td>
+        <td>{{ solicitud.estadoReemplazo || 'N/A' }}</td>
+        <td>
+          <button (click)="modificarSolicitud(solicitud)" >Modificar</button>
+          <button (click)="cancelarSolicitud(solicitud)" >Cancelar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal para modificar una solicitud -->
+  <div *ngIf="solicitudModificada" class="modal">
+    <div class="modal-content">
+      <h3>Modificar Solicitud</h3>
+      <label for="motivo-mod">Motivo:</label>
+      <input [(ngModel)]="solicitudModificada.motivo" id="motivo-mod" class="form-control">
+
+      <label for="fecha-mod">Fecha:</label>
+      <input [(ngModel)]="solicitudModificada.fecha" type="date" id="fecha-mod" class="form-control">
+
+      <label for="reemplazo-mod">Reemplazo Propuesto:</label>
+      <input [(ngModel)]="solicitudModificada.reemplazoPropuesto" id="reemplazo-mod" class="form-control">
+
+      <label for="estado-mod">Estado:</label>
+      <select [(ngModel)]="solicitudModificada.estado" id="estado-mod" class="form-control">
+        <option value="Pendiente">Pendiente</option>
+        <option value="Aceptado">Aceptado</option>
+        <option value="Rechazado">Rechazado</option>
+        <option value="Modificada">Modificada</option>
+      </select>
+
+      <button (click)="guardarModificacion()" class="btn btn-primary">Guardar Cambios</button>
+      <button (click)="solicitudModificada = null" class="btn btn-secondary">Cerrar</button>
+    </div>
+  </div>
+</div>

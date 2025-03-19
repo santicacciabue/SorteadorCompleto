@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SorteadorApplication<sorteador>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sorteador.sorteador.SorteadorApplication",
+            "projectName": "sorteador",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

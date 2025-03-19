@@ -1,0 +1,53 @@
+<!-- Tabla de reemplazos -->
+ <h2>Lista de reemplazos</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Solicitante</th>
+      <th>Fecha solicitud</th>
+      <th>Fecha Reemplazo</th>
+      <th>Reemplazo Propuesto</th>
+      <th>Estado</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reemplazo of reemplazos; trackBy: trackById">
+      <td>{{ reemplazo.solicitante }}</td>
+      <td>{{ reemplazo.fechaSolicitud }}</td>
+      <td>{{ reemplazo.fechaReemplazo }}</td>
+      <td>{{ reemplazo.reemplazoPropuesto }}</td>
+      <td [ngClass]="getEstadoClass(reemplazo.estado)">
+        {{ reemplazo.estado }}
+      </td>
+      <td>
+        <button (click)="openModal(reemplazo)">Ver Detalles</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal de detalles -->
+<div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3>Detalles del Reemplazo</h3>
+    <p><strong>Solicitante:</strong> {{ selectedReemplazo.solicitante }}</p>
+    <p><strong>Rol:</strong> {{ selectedReemplazo.rolSolicitante }}</p>
+    <p><strong>Motivo:</strong> {{ selectedReemplazo.motivo }}</p>
+    <p><strong>Fecha Solicitud:</strong> {{ selectedReemplazo.fechaSolicitud }}</p>
+    <p><strong>Reemplazo Propuesto:</strong> {{ selectedReemplazo.reemplazoPropuesto }}</p>
+    <p><strong>Rol Reemplazo:</strong> {{ selectedReemplazo.rolReemplazo }}</p>
+    <p><strong>Fecha Reemplazo:</strong> {{ selectedReemplazo.fechaReemplazo }}</p>
+    <p><strong>Fecha Devolución:</strong> {{ selectedReemplazo.fechaDevolucion }}</p>
+    <p><strong>Categoría:</strong> {{ selectedReemplazo.categoria }}</p>
+    <p><strong>Grupo:</strong> {{ selectedReemplazo.grupo }}</p>
+    <p><strong>Estado:</strong> <span [ngClass]="getEstadoClass(selectedReemplazo.estado)">{{ selectedReemplazo.estado }}</span></p>
+    <div class="modal-actions">
+      <button (click)="changeEstado('Aprobado')">Aprobar</button>
+      <button (click)="changeEstado('Rechazado')">Rechazar</button>
+      <button (click)="changeEstado('Cancelado')">Cancelar</button>
+      <button (click)="changeEstado('Confirmado')">Confirmar</button>
+    </div>
+    <button class="close-btn" (click)="closeModal()">Cerrar</button>
+  </div>
+</div>

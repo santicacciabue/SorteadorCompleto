@@ -1,0 +1,181 @@
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0d3556;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 60%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #fdfdfd;
+  color: #0d3556;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #9ba1a8;
+}
+
+/* Estado aprobado */
+.estado-aprobado {
+  color: #28A745;
+  font-weight: bold;
+}
+
+/* Estado rechazado */
+.estado-rechazado {
+  color: #F60004;
+  font-weight: bold;
+}
+
+/* Estado pendiente */
+.estado-pendiente {
+  color: #FFA500;
+  font-weight: bold;
+}
+
+/* Estilo para los detalles expandibles */
+.detalle-reemplazo {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  width: 45%;
+}
+
+h3 {
+  color: #0d3556;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+strong {
+  color: #0d3556;
+}
+
+/* Estilo de las acciones (botones) */
+.acciones button {
+  margin-right: 10px;
+}
+
+/* Estilos de los botones dentro del detalle */
+button.aprobar {
+  background-color: #28A745;
+}
+
+button.rechazar {
+  background-color: #F60004;
+}
+
+button.cancelar {
+  background-color: #FFA500;
+}
+
+button.confirmar {
+  background-color: #007BFF;
+}
+
+button.aprobar:hover {
+  background-color: #218838;
+}
+
+button.rechazar:hover {
+  background-color: #C82333;
+}
+
+button.cancelar:hover {
+  background-color: #E67E22;
+}
+
+button.confirmar:hover {
+  background-color: #0069D9;
+}
+
+/* Estilos de la categoría y estado */
+.categoria,
+.estado {
+  margin-top: 15px;
+}
+
+.categoria p,
+.estado p {
+  margin: 5px 0;
+}
+
+.estado p {
+  font-weight: bold;
+}
+/* Estilos para el modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.close-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.close-btn:hover {
+  background-color: darkred;
+}

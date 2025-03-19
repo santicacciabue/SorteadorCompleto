@@ -1,0 +1,82 @@
+<!-- Mostrar el login si el usuario NO está autenticado -->
+<div *ngIf="!authService.isUserAuthenticated(); else mainContent">
+  <app-login></app-login>
+</div>
+
+<!-- Contenido principal que se muestra después del login de autoridad -->
+<ng-template #mainContent>
+  <div class="container-fluid">
+    <!-- Fila principal con Flexbox -->
+    <div class="row">
+      <!-- Navbar en la izquierda (solo si el usuario está autenticado) -->
+      <div class="col-md-3">
+        <app-nav></app-nav>
+      </div>
+
+      <!-- Separa las tarjetas en 2 columnas -->
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-6">
+            <app-solicitudes></app-solicitudes>
+          </div>
+          <div class="col-md-6">
+            <app-reemplazos></app-reemplazos>
+          </div>
+        </div>
+
+        <!-- Segunda fila de tarjetas -->
+        <div class="row">
+          <div class="col-md-6">
+            <app-sorteos></app-sorteos>
+          </div>
+          <div class="col-md-6">
+            <app-disponibilidad></app-disponibilidad>
+          </div>
+        </div>
+        <!-- Otros componentes -->
+        <app-dashboard></app-dashboard>
+      </div>
+    </div>
+  </div>
+
+<!-- VISTA AUXILIAR/AUTORIDAD -->
+  <div class="row">
+    <!-- Navbar en la izquierda (solo si el usuario está autenticado) -->
+    <div class="col-md-3">
+      <app-nav></app-nav>
+    </div>
+
+    <!-- Separa las tarjetas en 2 columnas -->
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-6">
+          <app-proxima-asignacion></app-proxima-asignacion>
+          <app-gestion-reemplazos></app-gestion-reemplazos>
+        </div>
+        <div class="col-md-6">
+          <app-mis-asignaciones></app-mis-asignaciones>
+        </div>
+      </div>
+
+      <!-- Segunda fila de tarjetas -->
+      <div class="row">
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+
+        </div>
+      </div>
+      <app-lista-reemplazo></app-lista-reemplazo>
+      <app-lista-pendientes></app-lista-pendientes>
+
+      <!-- Otros componentes -->
+      <app-dashboard></app-dashboard>
+    </div>
+  </div>
+
+  <app-prueba>
+  
+  </app-prueba>
+  
+</ng-template>
