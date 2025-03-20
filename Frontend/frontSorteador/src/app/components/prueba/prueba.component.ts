@@ -7,7 +7,8 @@ import { ApiService } from '../../services/api.service';
   styleUrls: ['./prueba.component.css']
 })
 export class PruebaComponent implements OnInit{
-  usuarios: string[] = [];
+  usuarios: any[] = [];
+  usuarioSolo: any = {};
 
   constructor(private apiService: ApiService) {}
 
@@ -16,6 +17,12 @@ export class PruebaComponent implements OnInit{
       console.log('Usuarios recibidos:', data);
       this.usuarios = data;
     }, error => {
+      console.error('Error al conectar con el backend:', error);
+    });
+
+    this.apiService.listarIntegrantesId(8).subscribe(data=>{
+      this.usuarioSolo = data;
+    },error =>{
       console.error('Error al conectar con el backend:', error);
     });
   }

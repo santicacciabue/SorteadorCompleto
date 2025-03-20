@@ -1,1 +1,7 @@
-<p>prueba works!</p>
+<h1>Lista de datos</h1>
+<ul><li *ngFor="let usuario of usuarios">
+    {{ usuario.id }} - {{ usuario.nombre }} - {{ usuario.legajo }}
+</li></ul>
+
+<h1>Usuario por ID:</h1>
+<h4>{{usuarioSolo.nombre}} - {{usuarioSolo.legajo}}</h4>

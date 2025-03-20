@@ -9,7 +9,11 @@ export class ApiService {
   private apiUrl = 'http://localhost:8080/api';
   constructor(private http: HttpClient) { }
 
-  listarIntegrantes(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/integrantes/listar`);
+  listarIntegrantes(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/integrante/listar`);
+  }
+
+  listarIntegrantesId(id: number): Observable<any>{
+    return this.http.get(`${this.apiUrl}/integrante/listar/${id}`)
   }
 }
